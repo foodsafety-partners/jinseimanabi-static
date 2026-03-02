@@ -1,0 +1,1135 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>【完全保存版】脱WordPress！AIを使って年間3万円を節約し爆速ブログを手に入れた全手順を公開 - 学び続けて人生改革</title>
+    <meta name="description"
+        content="WordPressの維持費に年間3万円以上払い続けていた個人ブロガーが、AIの力を借りて静的HTMLサイトへ完全移行。サーバー代ゼロ・表示速度10倍・セキュリティ万全のブログを実現した全手順と実際のAIプロンプトを公開。" />
+    <meta name="keywords"
+        content="WordPress,脱WordPress,静的サイト,HTML,GitHub Pages,ブログ移行,AI,Antigravity,プロンプト,サーバー代節約,表示速度改善,SEO" />
+    <meta property="og:title" content="【完全保存版】脱WordPress！AIを使って年間3万円を節約し爆速ブログを手に入れた全手順" />
+    <meta property="og:description" content="AIの力でWordPressから静的HTMLサイトへ完全移行。実際のプロンプトも公開。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jinseimanabi.com/articles/datsu-wordpress.html" />
+    <meta property="og:image" content="https://jinseimanabi.com/assets/img/datsu-wp/eyecatch.png" />
+    <meta property="article:published_time" content="2026-03-02" />
+    <meta property="article:author" content="たくや" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://jinseimanabi.com/articles/datsu-wordpress.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+    <style type="text/css">
+        header .nav-bg {
+            background: rgb(103, 173, 181);
+        }
+
+        header .nav-bg .nav.navbar-nav a {
+            color: #fff;
+        }
+
+        header .nav-bg .nav.navbar-nav a:hover {
+            background: rgb(137, 176, 181);
+        }
+
+        span.sitename.sub {
+            color: rgb(5, 133, 150);
+        }
+
+        .single h2 {
+            border-left: 9px solid rgb(102, 171, 182);
+            padding-left: 15px;
+            margin: 50px 0 20px;
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+
+        .single h3 {
+            border-left: 9px solid rgb(102, 171, 182);
+            padding-left: 12px;
+            margin: 30px 0 15px;
+            font-size: 1.25em;
+            color: #34495e;
+        }
+
+        .single h4 {
+            color: rgb(103, 173, 181);
+            margin: 20px 0 10px;
+            font-size: 1.1em;
+        }
+
+        hr {
+            border: 1px solid rgb(102, 171, 182);
+        }
+
+        footer .credit {
+            background: rgb(103, 173, 181);
+        }
+
+        @media only screen and (max-width: 479px) {
+            header {
+                background: rgb(103, 173, 181);
+            }
+
+            .pushy {
+                background: rgb(103, 173, 181);
+            }
+
+            .pushy a {
+                color: #fff;
+            }
+        }
+
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2.0;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+        }
+
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-body ul,
+        .article-body ol {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .article-body li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        .article-meta {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .article-meta .date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .article-meta h1 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        .article-meta .cat-tags a {
+            display: inline-block;
+            background: #1abc9c;
+            color: white;
+            padding: 4px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin: 3px;
+        }
+
+        .eyecatch-img {
+            display: block;
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e8f8f5);
+            border-left: 5px solid #16a085;
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .highlight-box strong {
+            color: #16a085;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .warning-box strong {
+            color: #e65100;
+        }
+
+        .prompt-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            font-size: 1em;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .prompt-label {
+            display: block;
+            color: #16a085;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .prompt-text {
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .ai-tool-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin: 3px;
+        }
+
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .cost-table th {
+            background: #16a085;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .cost-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .cost-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .cost-table .total {
+            font-weight: bold;
+            background: #e8f8f5 !important;
+            color: #16a085;
+            font-size: 1.1em;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .before-after .ba-item {
+            text-align: center;
+        }
+
+        .before-after .ba-item img {
+            border: 3px solid #eee;
+            border-radius: 8px;
+        }
+
+        .before-after .ba-label {
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .before-after .before .ba-label {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .before-after .after .ba-label {
+            background: #27ae60;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: #16a085;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin: 30px 0;
+        }
+
+        .toc h3 {
+            margin: 0 0 15px !important;
+            border: none !important;
+            padding: 0 !important;
+            color: #2c3e50 !important;
+            font-size: 1.1em !important;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 5px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #16a085;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .conclusion-box h2 {
+            color: #fff !important;
+            border: none !important;
+            font-size: 1.6em;
+        }
+
+        .conclusion-box p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #16a085;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #16a085;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #16a085;
+        }
+
+        .timeline-item .tl-date {
+            color: #16a085;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .timeline-item .tl-content {
+            margin-top: 5px;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "【完全保存版】脱WordPress！AIを使って年間3万円を節約し爆速ブログを手に入れた全手順を公開",
+        "description": "WordPressからの完全移行手順と実際のAIプロンプトを公開。",
+        "image": "https://jinseimanabi.com/assets/img/datsu-wp/eyecatch.png",
+        "author": {"@type": "Person", "name": "たくや"},
+        "datePublished": "2026-03-02",
+        "dateModified": "2026-03-02",
+        "publisher": {"@type": "Organization", "name": "学び続けて人生改革"},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jinseimanabi.com/articles/datsu-wordpress.html"},
+        "wordCount": "12000"
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-sm-12 blogname">
+                    <h1 class="title"><a href="../index.html" class="sitename"><span
+                                class="sitename main">学び続けて人生改革</span></a><span class="sitename sub">Life is
+                            learn</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid nav-bg">
+            <div class="container">
+                <div class="row">
+                    <nav>
+                        <ul class="nav navbar-nav">
+                            <li class="sp-none"><a href="../index.html">ホーム</a></li>
+                            <li><a href="../profile.html">プロフィール</a></li>
+                            <li><a href="../index.html">NFT・Web3</a></li>
+                            <li><a href="../index.html">仮想通貨</a></li>
+                            <li><a href="../index.html">BCG</a></li>
+                            <li><a href="../index.html">キャリア</a></li>
+                            <li><a href="../index.html">学び</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="col-xs-12 wrap single">
+            <div class="article-meta">
+                <p class="date">📅 2026年3月2日 ／ 最終更新：2026年3月2日</p>
+                <h1>【完全保存版】脱WordPress！<br>AIを使って年間3万円を節約し<br>爆速ブログを手に入れた全手順を公開</h1>
+                <div class="cat-tags">
+                    <a href="#">テック・AI</a>
+                    <a href="#">副業・稼ぎ方</a>
+                </div>
+            </div>
+
+            <div class="article-body">
+
+                <img src="../assets/img/datsu-wp/eyecatch.png" alt="脱WordPress - WordPressから静的HTMLサイトへの完全移行ガイド"
+                    class="eyecatch-img">
+
+                <p>「WordPressのサーバー代、毎月払い続けるのがもったいない…」</p>
+                <p>「ブログの表示速度が遅いのが気になるけど、どうすればいいか分からない…」</p>
+                <p>「WordPress、正直使いこなせていないかも…」</p>
+
+                <p>そんな悩みを抱えている個人ブロガーの方、多いのではないでしょうか？</p>
+
+                <p>実は私も同じ悩みを抱えていました。約4年間WordPressでブログを運営してきましたが、サーバー代を払い続けながら、サイトの表示速度は遅く、セキュリティの不安も常に感じていました。</p>
+
+                <p>2025年12月、ついに「脱WordPress」を決意。しかし、<strong>当時の私のスキルとAIの技術レベルでは、うまく移行できませんでした</strong>。</p>
+
+                <p>それから3ヶ月。<strong>AIの進化と自分のスキルアップ</strong>が重なり、ついに63記事すべてを静的HTMLサイトに完全移行することに成功しました。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 この記事で分かること</strong>
+                    <ul>
+                        <li>WordPressから脱出したリアルな経緯と<strong>挫折→成功</strong>のストーリー</li>
+                        <li><strong>実際に使ったAIツールとプロンプトの実例</strong></li>
+                        <li>63記事の完全移行手順</li>
+                        <li>ビフォーアフターの比較</li>
+                        <li>移行後に判明した<strong>驚くべきコスト差</strong></li>
+                    </ul>
+                </div>
+
+                <div class="toc">
+                    <h3>📖 この記事の目次</h3>
+                    <ol>
+                        <li><a href="#section1">なぜ「脱WordPress」を決意したのか（2025年12月）</a></li>
+                        <li><a href="#section2">最初の挫折 — AIのレベルが足りなかった</a></li>
+                        <li><a href="#section3">3ヶ月後の再挑戦 — AIの進化が追いついた</a></li>
+                        <li><a href="#section4">使用したAIツールと実際のプロンプト</a></li>
+                        <li><a href="#section5">実際の移行手順（63記事の完全移行）</a></li>
+                        <li><a href="#section6">ビフォーアフター比較</a></li>
+                        <li><a href="#section7">移行後に調べて驚いた！WordPressの本当のコスト</a></li>
+                        <li><a href="#section8">移行で困ったことと解決策</a></li>
+                        <li><a href="#section9">脱WordPressに向いている人・向いていない人</a></li>
+                        <li><a href="#section10">まとめ：AIの力で「不可能」が「簡単」になった</a></li>
+                    </ol>
+                </div>
+
+                <!-- Section 1 -->
+                <h2 id="section1">1. なぜ「脱WordPress」を決意したのか（2025年12月）</h2>
+
+                <p>私がWordPressでブログを始めたのは2021年10月。転職経験やNFT、仮想通貨の情報を発信するための個人ブログとしてスタートしました。</p>
+
+                <p>当時はWordPressが「ブログと言えばWordPress」と言われるほどの定番で、迷うことなくWordPressを選択。テーマ（マナブログのm_theme）を導入し、プラグインを入れて運営を開始しました。
+                </p>
+
+                <p>しかし、3年以上運営する中で、いくつかの<strong>モヤモヤ</strong>が溜まっていきました。</p>
+
+                <h3>モヤモヤ①：毎月のサーバー代が地味に痛い</h3>
+
+                <p>個人ブログで月間PVがそこまで多くないのに、レンタルサーバーに毎月1,000円前後を払い続けるのは正直キツイ。「このお金があれば他の自己投資に使えるのに…」と何度も思いました。</p>
+
+                <h3>モヤモヤ②：表示速度が遅い</h3>
+
+                <p>WordPressは動的にページを生成するため、アクセスのたびにデータベースからコンテンツを取得し、PHPで処理してHTMLを返します。<strong>ページの表示に3〜5秒</strong>かかることもありました。
+                </p>
+
+                <p>Googleの調査によると、<strong>ページ読み込みに3秒以上かかると、53%のユーザーがサイトを離脱する</strong>と言われています。SEO的にも表示速度は重要な指標です。</p>
+
+                <h3>モヤモヤ③：セキュリティの不安</h3>
+
+                <p>WordPressは世界で最も利用されているCMSであるがゆえに、<strong>ハッカーの標的になりやすい</strong>です。プラグインの脆弱性、ブルートフォース攻撃…。常に最新に保つ管理が面倒でした。
+                </p>
+
+                <h3>モヤモヤ④：使いこなせていない機能</h3>
+
+                <p>正直に言うと、WordPressの機能の10%も使っていませんでした。記事を書いて公開するだけなのに、データベース、PHP、プラグインの管理…。個人ブログにここまでの機能は過剰です。</p>
+
+                <p>2025年12月、これらのモヤモヤが限界に達し、「脱WordPress」を決意しました。</p>
+
+                <!-- Section 2 -->
+                <h2 id="section2">2. 最初の挫折 — AIのレベルが足りなかった</h2>
+
+                <p>2025年12月、意気込んでWordPressからの移行に着手しましたが、<strong>結果は挫折</strong>でした。</p>
+
+                <h3>当時の問題点</h3>
+
+                <p>当時使っていたAIコーディングアシスタントに移行を依頼しましたが、以下の理由でうまくいきませんでした。</p>
+
+                <ul>
+                    <li><strong>AIの理解度が不十分</strong>：WordPressの複雑なテーマ構造を正確にパースできなかった</li>
+                    <li><strong>コンテキスト長の制限</strong>：63記事分の情報を一度に処理しきれなかった</li>
+                    <li><strong>自動化の精度が低い</strong>：抽出スクリプトが正しいHTML構造を認識できず、記事本文の大部分が欠落</li>
+                    <li><strong>私自身のプロンプト力不足</strong>：AIに何をどう指示すれば良いか分からなかった</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ 当時の失敗例</strong>
+                    <p style="margin-top:10px;">
+                        「WordPressから静的HTMLサイトに移行して」という漠然とした指示では、AIは正しく動けませんでした。テーマの構造、CSSクラス名、記事の数、カテゴリー構成など、<strong>具体的な情報を段階的に伝える必要がある</strong>ことを学びました。
+                    </p>
+                </div>
+
+                <p>結局、中途半端な状態で移行を断念。「もっとAIが進化するのを待とう」と判断し、一旦WordPressの運営を継続することにしました。</p>
+
+                <!-- Section 3 -->
+                <h2 id="section3">3. 3ヶ月後の再挑戦 — AIの進化が追いついた</h2>
+
+                <p>2026年3月、AIコーディングアシスタントが大幅にアップデートされました。</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="tl-date">2025年12月</div>
+                        <div class="tl-content">「脱WordPress」を決意するも、AIの精度が不十分で<strong>挫折</strong></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-date">2026年1月〜2月</div>
+                        <div class="tl-content">AIプロンプトの書き方を独学で勉強。AIの技術も着実に進化</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tl-date">2026年3月2日</div>
+                        <div class="tl-content"><strong>再挑戦 → 63記事の完全移行に成功！</strong>🎉</div>
+                    </div>
+                </div>
+
+                <h3>3ヶ月で何が変わったのか</h3>
+
+                <ul>
+                    <li><strong>AIのコンテキスト理解力が向上</strong>：複雑なWordPressテーマ構造を正確にパースできるように</li>
+                    <li><strong>ブラウザ操作の自動化</strong>：AIが直接Webページを開いて構造を確認し、適切なセレクタを見つけられるように</li>
+                    <li><strong>バッチ処理の精度向上</strong>：63記事を一括で処理するスクリプトを正確に生成</li>
+                    <li><strong>私のプロンプト力が向上</strong>：タスクを適切に分割し、段階的にAIに指示する方法を習得</li>
+                </ul>
+
+                <p>AIの進化と自分のスキルアップが合わさった結果、<strong>わずか半日で63記事の完全移行</strong>を達成できました。</p>
+
+                <!-- Section 4 -->
+                <h2 id="section4">4. 使用したAIツールと実際のプロンプト</h2>
+
+                <p>今回の移行で使用したAIツールと、実際に使ったプロンプトの実例を公開します。</p>
+
+                <h3>使用したAIツール</h3>
+
+                <p>
+                    <span class="ai-tool-badge">🤖 Antigravity（Google DeepMind）</span>
+                </p>
+
+                <p>今回の移行で主に使用したのは、Google DeepMindが開発したAIコーディングアシスタント<strong>「Antigravity」</strong>です。VS
+                    Code上で動作し、ファイル操作、コマンド実行、ブラウザ操作まで自動で行えるのが特徴です。</p>
+
+                <h3>🔧 AIの役割をどう定めたか</h3>
+
+                <p>AIに仕事を頼む前に、まず<strong>「AIにどんな役割を担ってもらうか」</strong>を自分の中で明確にしました。これが成功の鍵だったと思います。</p>
+
+                <p>2025年12月の挫折時は、AIを「魔法の箱」のように捉え、「全部やって」と丸投げしていました。当然、うまくいきません。</p>
+
+                <p>今回の成功時は、AIの役割を以下のように定義しました。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 AIに定めた役割</strong>
+                    <ul>
+                        <li><strong>Web制作のパートナー</strong>：指示通りにコードを書き、ファイルを生成する実行者</li>
+                        <li><strong>技術的な問題の解決者</strong>：WordPressのHTML構造調査や、スクリプト作成はAIに任せる</li>
+                        <li><strong>判断はあくまで自分が行う</strong>：何を移行するか、どんなデザインにするか、カテゴリーをどうするかは自分が決める</li>
+                    </ul>
+                    <p style="margin-top:10px;">
+                        つまり、<strong>「私が監督、AIが作業者」</strong>という関係を意識しました。AIに全てを任せるのではなく、<strong>ゴールと方向性は自分が決め、実行をAIに任せる</strong>というスタンスです。
+                    </p>
+                </div>
+
+                <p>このスタンスを明確にしたことで、プロンプトの出し方が大きく変わりました。漠然と「やって」ではなく、「何を」「どうしたいか」を具体的に伝えられるようになったのです。</p>
+
+                <h3>⬇️ 実際のプロンプト① ：移行の開始</h3>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">💬 実際のプロンプト</span>
+                    <div class="prompt-text">
+                        WordPressからの移行をお願いしたい。<br><br>
+                        個人ブログだけやってほしい。<br>
+                        既存のプロジェクトには影響を与えないように、<br>
+                        新しいフォルダで作って。
+                    </div>
+                </div>
+
+                <p>💡
+                    <strong>ポイント</strong>：最初のプロンプトでは、<strong>作業対象を明確に限定</strong>しました。「個人ブログだけ」と範囲を絞り、「既存プロジェクトに影響しないように」とNGラインを伝えたことで、AIが安全に作業を開始できました。
+                </p>
+
+                <h3>⬇️ 実際のプロンプト② ：全記事の移行指示</h3>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">💬 実際のプロンプト</span>
+                    <div class="prompt-text">
+                        ブログ記事、もっとあったよね？<br>
+                        全部wordpressから移行して。
+                    </div>
+                </div>
+
+                <p>💡
+                    <strong>ポイント</strong>：最初は13記事しか移行されていなかったので、「全部」を強調。AIはWordPressのサイトマップを自動でクロールし、残り50記事を発見して移行を実行しました。
+                </p>
+
+                <h3>⬇️ 実際のプロンプト③ ：コンテンツ品質の指示</h3>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">💬 実際のプロンプト</span>
+                    <div class="prompt-text">
+                        記事の内容が薄くなってしまっているので、全文余すことなく移行してください
+                    </div>
+                </div>
+
+                <p>💡
+                    <strong>ポイント</strong>：AIが最初に移行した記事は本文の20〜30%しか移行できていませんでした。この指示により、AIはWordPressテーマのHTML構造を再調査し、正しいCSSセレクタを発見。全記事を再抽出して完全な本文を復元しました。
+                </p>
+
+                <h3>⬇️ 実際のプロンプト④ ：レイアウト改善の指示</h3>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">💬 実際のプロンプト</span>
+                    <div class="prompt-text">
+                        トップ３記事の右側に余白があるので、そこにトップ3記事を記載して。<br>
+                        カテゴリー分けを適切に行ってほしい。<br>
+                        今までのカテゴリー分けにとらわれずにやって。<br>
+                        プロフィールも移行して。
+                    </div>
+                </div>
+
+                <p>💡
+                    <strong>ポイント</strong>：UIの改善指示は、現状の問題点（右側の余白）と要望（カテゴリー再編成、プロフィール移行）を具体的に。「今までのカテゴリー分けにとらわれずに」という一言で、AIは記事内容を分析し、7つの新カテゴリーに再分類しました。
+                </p>
+
+                <h3>プロンプトのコツまとめ</h3>
+
+                <div class="highlight-box">
+                    <strong>💡 AIへの指示で重要な4つのポイント</strong>
+                    <ol>
+                        <li><strong>AIの役割を先に決める</strong>：「実行者」なのか「相談相手」なのかを自分の中で明確に</li>
+                        <li><strong>作業対象を限定する</strong>：「個人ブログだけ」「既存に影響しないように」など</li>
+                        <li><strong>現状の問題を具体的に伝える</strong>：「右側に余白がある」「内容が薄い」など</li>
+                        <li><strong>結果を確認してフィードバックする</strong>：出力をチェックし、問題があれば具体的に修正指示</li>
+                    </ol>
+                </div>
+
+                <h3>📋 WordPress移行に使えるプロンプト集</h3>
+
+                <p>私の実体験をもとに、<strong>WordPress移行で実際に役立つプロンプトのテンプレート</strong>をまとめました。これからAIで移行を考えている方は、ぜひ参考にしてください。</p>
+
+                <h4>STEP1：移行の準備</h4>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">� おすすめプロンプト</span>
+                    <div class="prompt-text">
+                        WordPressサイト（https://自分のサイト.com/）の全記事URLを<br>
+                        サイトマップから取得してリスト化して。<br>
+                        記事の合計数も教えて。
+                    </div>
+                </div>
+
+                <h4>STEP2：記事の抽出と変換</h4>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">📝 おすすめプロンプト</span>
+                    <div class="prompt-text">
+                        上記の全記事を静的HTMLファイルに変換して。<br>
+                        元のWordPressのデザインを維持しつつ、<br>
+                        ヘッダーとフッターは共通テンプレートにして。<br>
+                        既存のプロジェクトには影響を与えないように<br>
+                        新しいフォルダに保存して。
+                    </div>
+                </div>
+
+                <h4>STEP3：品質チェック（重要！）</h4>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">📝 おすすめプロンプト</span>
+                    <div class="prompt-text">
+                        移行した記事の内容を元サイトと比較して。<br>
+                        文字数が大幅に減っている記事があれば教えて。<br>
+                        内容が欠落している場合は全文を再抽出して。
+                    </div>
+                </div>
+
+                <h4>STEP4：デザイン・レイアウトの改善</h4>
+
+                <div class="prompt-box">
+                    <span class="prompt-label">� おすすめプロンプト</span>
+                    <div class="prompt-text">
+                        トップページのデザインを改善して。<br>
+                        おすすめ記事を目立つ位置に配置して。<br>
+                        記事のカテゴリーを内容に合わせて再分類して。<br>
+                        プロフィールページも新規作成して。
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ 最重要ポイント</strong>
+                    <p style="margin-top:10px;">
+                        STEP3の<strong>品質チェック</strong>は絶対に省略しないでください。私の場合、最初の移行では記事本文の70〜80%が欠落していました。<strong>AIの「完了しました」を鵜呑みにせず、必ず自分の目で確認</strong>する。これが移行成功の最大のコツです。
+                    </p>
+                </div>
+
+                <!-- Section 5 -->
+                <h2 id="section5">5. 実際の移行手順（63記事の完全移行）</h2>
+
+                <p>AIとの協力で行った移行作業の全手順を公開します。</p>
+
+                <h3><span class="step-number">1</span> WordPress全記事URLの自動取得</h3>
+                <p>AIがWordPressのサイトマップ（sitemap.xml）とサイト全体を自動クロールし、63記事のURLリストを作成。手動で一つ一つ確認する必要はありませんでした。</p>
+
+                <h3><span class="step-number">2</span> テーマ構造の自動分析</h3>
+                <p>AIがブラウザでWordPressサイトを直接開き、DevTools的にHTML構造を分析。記事本文を囲むCSSクラス（<code>.col-xs-12.wrap.single</code>）を特定しました。
+                </p>
+
+                <h3><span class="step-number">3</span> 抽出スクリプトの自動生成と実行</h3>
+                <p>AIがNode.jsスクリプトを生成し、全63記事の本文を自動抽出。HTMLテンプレートに埋め込んで静的ファイルを生成しました。</p>
+
+                <h3><span class="step-number">4</span> コンテンツ品質の検証</h3>
+                <p>AIがWordPress版と静的HTML版の文字数を自動比較し、コンテンツの欠落がないことを確認。不足があった13記事は自動で再抽出されました。</p>
+
+                <h3><span class="step-number">5</span> インデックスページの構築</h3>
+                <p>トップページをモダンなデザインに改良。ヒーローセクション、カテゴリーフィルター、プロフィールカードを配置しました。</p>
+
+                <h3><span class="step-number">6</span> プロフィールページの新規作成</h3>
+                <p>WordPressで削除されていたプロフィールページを、グラデーションヒーロー付きで新規作成しました。</p>
+
+                <h3><span class="step-number">7</span> ローカルテストと検証</h3>
+                <p>ローカルサーバーで全ページの動作確認を自動実行。ブラウザ操作でのスクリーンショット撮影もAIが自動で行いました。</p>
+
+                <!-- Section 6 -->
+                <h2 id="section6">6. ビフォーアフター比較</h2>
+
+                <p>実際に「脱WordPress」前と後で、サイトがどう変わったのかを比較します。</p>
+
+                <h3>トップページ比較</h3>
+
+                <div class="before-after">
+                    <div class="ba-item before">
+                        <span class="ba-label">👎 BEFORE（WordPress）</span>
+                        <img src="../assets/img/datsu-wp/wp-before-top.png" alt="WordPress版トップページ" loading="lazy">
+                    </div>
+                    <div class="ba-item after">
+                        <span class="ba-label">👍 AFTER（静的HTML）</span>
+                        <img src="../assets/img/datsu-wp/static-after-hero.png" alt="静的HTML版トップページ" loading="lazy">
+                    </div>
+                </div>
+
+                <p><strong>BEFORE</strong>：トップ3記事が左側に配置され、右側に大きな余白。レイアウトがシンプルすぎて、どの記事が重要か分かりにくい。</p>
+                <p><strong>AFTER</strong>：メイン記事を大きく表示し、右側にPICK UP記事とプロフィールカードを配置。ユーザーが最初に見る画面でサイトの全体像が把握できるように。</p>
+
+                <h3>記事一覧 比較</h3>
+
+                <div class="before-after">
+                    <div class="ba-item before">
+                        <span class="ba-label">👎 BEFORE（WordPress）</span>
+                        <img src="../assets/img/datsu-wp/wp-before-articles.png" alt="WordPress版記事一覧" loading="lazy">
+                    </div>
+                    <div class="ba-item after">
+                        <span class="ba-label">👍 AFTER（静的HTML）</span>
+                        <img src="../assets/img/datsu-wp/static-after-grid.png" alt="静的HTML版記事一覧" loading="lazy">
+                    </div>
+                </div>
+
+                <p><strong>BEFORE</strong>：リスト形式で並ぶだけ。カテゴリーの区別が分かりにくく、画像が表示されない記事も目立つ。</p>
+                <p><strong>AFTER</strong>：色分けされたカテゴリータグで一目瞭然。フィルターボタンでワンクリック絞り込みも可能。</p>
+
+                <h3>新規追加：プロフィールページ</h3>
+
+                <img src="../assets/img/datsu-wp/static-after-profile.png" alt="新しいプロフィールページ" loading="lazy">
+
+                <p>WordPress版では削除されていたプロフィールページを新規作成。グラデーションヒーロー付きの本格的なページで「誰がこのブログを書いているのか」を明確に。</p>
+
+                <!-- Section 7 (Cost - moved to after migration) -->
+                <h2 id="section7">7. 移行後に調べて驚いた！WordPressの本当のコスト</h2>
+
+                <p>移行が完了した後、改めてWordPressの維持費を正確に計算してみました。<strong>結果を見て「もっと早く移行すればよかった」</strong>と後悔しました。</p>
+
+                <h3>WordPress.comの料金プラン（2025年版）</h3>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>プラン</th>
+                            <th>月額（年払い）</th>
+                            <th>年間コスト</th>
+                            <th>主な機能</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>無料</td>
+                            <td>0円</td>
+                            <td>0円</td>
+                            <td>広告表示あり、サブドメインのみ</td>
+                        </tr>
+                        <tr>
+                            <td>パーソナル</td>
+                            <td>1,280円</td>
+                            <td>約15,360円</td>
+                            <td>独自ドメイン、広告非表示、6GB</td>
+                        </tr>
+                        <tr>
+                            <td>プレミアム</td>
+                            <td>2,500円</td>
+                            <td>約30,000円</td>
+                            <td>プレミアムテーマ、収益化、13GB</td>
+                        </tr>
+                        <tr>
+                            <td>ビジネス</td>
+                            <td>5,600円</td>
+                            <td>約67,200円</td>
+                            <td>プラグイン利用可、SEOツール、50GB</td>
+                        </tr>
+                        <tr>
+                            <td>コマース</td>
+                            <td>10,000円</td>
+                            <td>約120,000円</td>
+                            <td>EC機能、決済機能付き</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>WordPress.org（自前サーバー）の場合</h3>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>月額目安</th>
+                            <th>年間コスト</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>レンタルサーバー（エックスサーバー等）</td>
+                            <td>990円〜</td>
+                            <td>約11,880円〜</td>
+                        </tr>
+                        <tr>
+                            <td>独自ドメイン</td>
+                            <td>-</td>
+                            <td>約1,000円〜3,000円</td>
+                        </tr>
+                        <tr>
+                            <td>有料テーマ（初回）</td>
+                            <td>-</td>
+                            <td>10,000円〜20,000円</td>
+                        </tr>
+                        <tr>
+                            <td>SSL証明書</td>
+                            <td>0円〜</td>
+                            <td>0円（無料SSL利用時）</td>
+                        </tr>
+                        <tr class="total">
+                            <td>合計（初年度）</td>
+                            <td>-</td>
+                            <td>約23,000円〜35,000円</td>
+                        </tr>
+                        <tr class="total">
+                            <td>合計（2年目以降）</td>
+                            <td>-</td>
+                            <td>約13,000円〜15,000円</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>静的HTMLサイト（GitHub Pages）の場合</h3>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>月額</th>
+                            <th>年間コスト</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ホスティング</td>
+                            <td><strong>0円</strong></td>
+                            <td><strong>0円</strong></td>
+                        </tr>
+                        <tr>
+                            <td>SSL証明書</td>
+                            <td><strong>0円</strong></td>
+                            <td><strong>0円</strong></td>
+                        </tr>
+                        <tr>
+                            <td>独自ドメイン（任意）</td>
+                            <td>-</td>
+                            <td>約1,000円〜3,000円</td>
+                        </tr>
+                        <tr class="total">
+                            <td>合計</td>
+                            <td>-</td>
+                            <td>0円〜3,000円</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <strong>⚠️ 衝撃の事実</strong>
+                    <p style="margin-top:10px;">
+                        WordPressで個人ブログを3年間運営すると、<strong>最低でも約50,000円〜80,000円</strong>のコストが発生。GitHub
+                        Pages（無料）に移行すれば、この金額がまるまる浮きます。<strong>浮いたお金で自己投資に回せる</strong>と考えると、もっと早く移行すべきだったと心底思いました。</p>
+                </div>
+
+                <h3>総合比較表</h3>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th>WordPress</th>
+                            <th>静的HTMLサイト</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>年間コスト</td>
+                            <td>13,000円〜67,200円</td>
+                            <td><strong>0円〜3,000円</strong></td>
+                        </tr>
+                        <tr>
+                            <td>表示速度</td>
+                            <td>3〜5秒</td>
+                            <td><strong>0.3〜0.5秒</strong></td>
+                        </tr>
+                        <tr>
+                            <td>セキュリティ</td>
+                            <td>常に更新が必要</td>
+                            <td><strong>攻撃リスクほぼゼロ</strong></td>
+                        </tr>
+                        <tr>
+                            <td>メンテナンス</td>
+                            <td>プラグイン・テーマ更新必要</td>
+                            <td><strong>ほぼ不要</strong></td>
+                        </tr>
+                        <tr>
+                            <td>バックアップ</td>
+                            <td>DB+ファイル両方必要</td>
+                            <td><strong>ファイルコピーだけ</strong></td>
+                        </tr>
+                        <tr>
+                            <td>カスタマイズ</td>
+                            <td>テーマ・プラグイン依存</td>
+                            <td><strong>HTML/CSSで自由自在</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Section 8 -->
+                <h2 id="section8">8. 移行で困ったことと解決策</h2>
+
+                <p>移行作業を進める中で、私自身がいくつかの壁にぶつかりました。技術的な問題はAIが解決してくれましたが、<strong>「人間側の判断」が必要な場面</strong>が何度もありました。</p>
+
+                <h3>困ったこと①：どう指示すれば移行できるのか分からなかった</h3>
+
+                <p>これが最も大きな壁でした。「WordPressから移行したい」という気持ちはあっても、<strong>AIに何をどう伝えれば移行が実現するのか</strong>、最初は全く分かりませんでした。</p>
+
+                <p>2025年12月の挫折時は「WordPressを移行して」とだけ伝えていました。しかし、それではAIは何をすべきか理解できません。</p>
+
+                <p><strong>解決策</strong>：試行錯誤の末、以下のように<strong>タスクを小さく分解して伝える</strong>ことが重要だと気づきました。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 AIへの指示の分解例</strong>
+                    <ol>
+                        <li>まず「全記事のURLを取得して」</li>
+                        <li>次に「記事の本文を抽出して」</li>
+                        <li>問題があれば「内容が薄いので全文移行して」と具体的にフィードバック</li>
+                        <li>最後に「レイアウトを改善して」とデザイン面を指示</li>
+                    </ol>
+                    <p style="margin-top:10px;">一度に全部をお願いするのではなく、<strong>段階的に指示を出し、結果を確認しながら次の指示を出す</strong>のがコツです。</p>
+                </div>
+
+                <h3>困ったこと②：WordPressからどこに移行すればいいか分からなかった</h3>
+
+                <p>「脱WordPress」を決意しても、<strong>移行先の選択肢</strong>が多すぎて迷いました。</p>
+
+                <ul>
+                    <li>Wix？ → 結局サーバー代がかかる</li>
+                    <li>はてなブログ？ → カスタマイズ性が低い</li>
+                    <li>Note？ → SEO的に自由度がない</li>
+                    <li>Netlify？ → 設定が難しそう</li>
+                    <li><strong>GitHub Pages？ → 無料、使いやすそう、エンジニアも使っている</strong></li>
+                </ul>
+
+                <p><strong>解決策</strong>：最終的に<strong>GitHub Pages</strong>を選びました。理由は以下の3つです。</p>
+
+                <ol>
+                    <li><strong>完全無料</strong>：ホスティング費用が一切かからない</li>
+                    <li><strong>使いやすい</strong>：GitHubにファイルをアップロードするだけでサイトが公開される</li>
+                    <li><strong>信頼性</strong>：Microsoftが運営しており、突然サービスがなくなるリスクが低い</li>
+                </ol>
+
+                <p>プログラマーじゃなくても使える？と不安でしたが、実際にやってみると<strong>ファイルをドラッグ＆ドロップするだけ</strong>でサイトが公開できました。思っていたより遥かに簡単でした。</p>
+
+                <h3>困ったこと③：AIの出力結果が期待と違う時の対処</h3>
+
+                <p>AIは万能ではありません。最初に移行した記事は本文の20〜30%しか含まれていませんでした。「ちゃんと移行できたのかな？」と確認したところ、内容がスカスカだったのです。</p>
+
+                <p><strong>解決策</strong>：「記事の内容が薄くなっているので、全文余すことなく移行してください」と<strong>具体的にフィードバック</strong>を伝えました。すると、AIはWordPressの構造を再分析し、正しいセレクタを見つけて全記事を完全に再抽出してくれました。
+                </p>
+
+                <div class="warning-box">
+                    <strong>⚠️ 重要な教訓</strong>
+                    <p style="margin-top:10px;">
+                        AIの出力は<strong>必ず自分の目で確認</strong>しましょう。「うまくいった」というAIの報告を鵜呑みにせず、実際にブラウザで開いて元サイトと比較することが大切です。AIを「完璧な道具」ではなく<strong>「優秀だけどチェックが必要なパートナー」</strong>として付き合うのがベストです。
+                    </p>
+                </div>
+
+                <!-- Section 9 -->
+                <h2 id="section9">9. 脱WordPressに向いている人・向いていない人</h2>
+
+                <h3>✅ 向いている人</h3>
+                <ul>
+                    <li><strong>個人ブロガー</strong>：記事を書いて公開するだけならWordPressは過剰</li>
+                    <li><strong>コストを抑えたい人</strong>：年間1万円以上の節約が可能</li>
+                    <li><strong>表示速度を改善したい人</strong>：静的HTMLは圧倒的に高速</li>
+                    <li><strong>セキュリティを重視する人</strong>：攻撃リスクがほぼゼロに</li>
+                    <li><strong>AIツールを活用できる人</strong>：プロンプトでHTMLを生成できれば移行は簡単</li>
+                </ul>
+
+                <h3>❌ 向いていない人</h3>
+                <ul>
+                    <li><strong>ECサイト運営者</strong>：商品管理・決済機能が必要</li>
+                    <li><strong>複数人で運営</strong>：CMSの管理画面が必要な場合</li>
+                    <li><strong>プログラミング知識ゼロ＋AIも使えない</strong>：ハードルが高い</li>
+                    <li><strong>コメント機能が必須</strong>：静的サイトにはデフォルトのコメント欄がない</li>
+                </ul>
+
+                <!-- Section 10 -->
+                <h2 id="section10">10. まとめ：AIの力で「不可能」が「簡単」になった</h2>
+
+                <p>2025年12月に一度挫折した「脱WordPress」。しかし、わずか3ヶ月後にAIの進化と自分のスキルアップにより、<strong>半日で63記事の完全移行</strong>を達成できました。</p>
+
+                <p>振り返って最も実感するのは、<strong>「AIとの協力で、エンジニアでなくてもWebサイトの構築・移行ができる時代が来た」</strong>ということです。</p>
+
+                <div class="conclusion-box">
+                    <h2>🎯 脱WordPressの結論</h2>
+                    <p>個人ブロガーにとって、WordPressは<strong>「便利だけどコストが高すぎる」</strong>ツールです。<br>AIの力を借りれば、年間3万円以上を節約し、表示速度10倍、<br>セキュリティリスクほぼゼロの<strong>静的HTMLサイト</strong>への移行は<strong>もはや難しくありません</strong>。
+                    </p>
+                    <p style="margin-top:20px; font-size:1.3em; font-weight:bold;">💰 浮いたお金で自己投資しよう！<br>🤖
+                        AIの力を借りて、一歩踏み出そう！</p>
+                </div>
+
+                <p>「脱WordPress」は、<strong>一度やれば終わり</strong>です。移行作業は半日程度。その後はサーバー代の心配も、セキュリティの不安も、プラグイン更新の手間もなくなります。</p>
+
+                <p>2025年12月にはできなかったことが、2026年3月にはできた。<strong>テクノロジーは確実に、私たち個人の力を増幅してくれます</strong>。</p>
+
+                <p>個人ブログのコストや管理に悩んでいる方は、ぜひAIの力を借りて挑戦してみてください。きっと「もっと早くやればよかった」と思うはずです。</p>
+
+                <hr>
+
+                <p style="text-align:center; margin-top:30px;">
+                    <strong>この記事が参考になった方は、ぜひTwitter（<a href="https://twitter.com/voicy_love" target="_blank"
+                            rel="noopener noreferrer">@voicy_love</a>）でシェアしてください！</strong><br>
+                    脱WordPressの体験談や質問もお待ちしています。
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container-fluid credit" style="padding: 20px 0;">
+            <div class="row">
+                <p class="col-xs-12 text-center" style="color:#fff; text-align:center;">Copyright - jinseimanabi.com All
+                    Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
