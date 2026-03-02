@@ -1,0 +1,1138 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学び続けて人生改革 - 人生は学びの連続。転職、副業、自己啓発でスキルアップするためのブログ。</title>
+    <meta name="description" content="学び続けて人生改革 - 転職組の中小企業サラリーマンが限られた時間でスキルアップし、人生を変える方法を発信。" />
+    <meta property="og:title" content="学び続けて人生改革" />
+    <meta property="og:description" content="転職組の中小企業サラリーマンが限られた時間でスキルアップし、人生を変える方法を発信。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jinseimanabi.com/" />
+    <meta property="og:image" content="https://jinseimanabi.com/assets/img/cryptninjya01jin.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <style type="text/css">
+        header .nav-bg {
+            background: rgb(103, 173, 181);
+        }
+
+        header .nav-bg .nav.navbar-nav a {
+            color: #fff;
+        }
+
+        header .nav-bg .nav.navbar-nav a:hover {
+            background: rgb(137, 176, 181);
+        }
+
+        span.sitename.sub {
+            color: rgb(5, 133, 150);
+        }
+
+        .single h2 {
+            border-left: 9px solid rgb(102, 171, 182);
+        }
+
+        .single h3 {
+            border-left: 9px solid rgb(102, 171, 182);
+        }
+
+        .single h4 {
+            color: rgb(103, 173, 181);
+        }
+
+        .single p.point i {
+            color: rgb(102, 171, 182);
+        }
+
+        hr {
+            border: 1px solid rgb(102, 171, 182);
+        }
+
+        footer .credit {
+            background: rgb(103, 173, 181);
+        }
+
+        @media only screen and (max-width: 479px) {
+            header {
+                background: rgb(103, 173, 181);
+            }
+
+            .pushy {
+                background: rgb(103, 173, 181);
+            }
+
+            .pushy a {
+                color: #fff;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+
+        .hero-main {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            height: 380px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-main a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-main a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        }
+
+        .hero-main .hero-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 2;
+            color: #fff;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.4;
+        }
+
+        .hero-sidebar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hero-sidebar-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hero-sidebar-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-sidebar-img {
+            width: 100px;
+            height: 75px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .hero-sidebar-text {
+            font-size: 0.95em;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #2c3e50;
+        }
+
+        .hero-sidebar-text .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 0.7em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-main {
+                height: 250px;
+            }
+        }
+
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 0;
+        }
+
+        .category-filter button {
+            padding: 8px 20px;
+            border: 2px solid #16a085;
+            background: transparent;
+            color: #16a085;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .category-filter button:hover,
+        .category-filter button.active {
+            background: #16a085;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-sm-12 blogname">
+                    <h1 class="title">
+                        <a href="./index.html" class="sitename">
+                            <span class="sitename main">学び続けて人生改革</span>
+                        </a>
+                        <span class="sitename sub">Life is learn</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid nav-bg">
+            <div class="container">
+                <div class="row">
+                    <nav>
+                        <ul class="nav navbar-nav">
+                            <li class="sp-none"><a href="./index.html">ホーム</a></li>
+                            <li><a href="./profile.html">プロフィール</a></li>
+                            <li><a href="#" onclick="filterCat('NFT・Web3')">NFT・Web3</a></li>
+                            <li><a href="#" onclick="filterCat('仮想通貨・取引所')">仮想通貨</a></li>
+                            <li><a href="#" onclick="filterCat('ブロックチェーンゲーム')">BCG</a></li>
+                            <li><a href="#" onclick="filterCat('キャリア・転職')">キャリア</a></li>
+                            <li><a href="#" onclick="filterCat('自己啓発・学び')">学び</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-main">
+                    <a href="./articles/coincheck.html"
+                        style="background-image:url(./assets/img/37d144a5ca67c1f68c52daf851365c72.png)">
+                        <span class="hero-title">📌 仮想通貨、NFTを始めるために必要なコインチェックとは？販売所、取引所の違いも解説</span>
+                    </a>
+                </div>
+                <div class="hero-sidebar-list">
+                    <a href="./articles/bcg-pc.html" class="hero-sidebar-item">
+                        <div class="hero-sidebar-img"
+                            style="background-image:url(https://jinseimanabi.com/wp-content/uploads/2022/05/36c4e3eae8049c5b3d4b7719062f14c1.png)">
+                        </div>
+                        <div class="hero-sidebar-text">
+                            <span class="badge">PICK UP</span><br>
+                            ブロックチェーンゲーム、メタバースをやるためのハイスペックPCを3万円で購入する方法
+                        </div>
+                    </a>
+                    <a href="./articles/nft-giveaway.html" class="hero-sidebar-item">
+                        <div class="hero-sidebar-img"
+                            style="background-image:url(https://jinseimanabi.com/wp-content/uploads/2021/10/a70c36251488f7b79f8569c9f6c1c3a4.png)">
+                        </div>
+                        <div class="hero-sidebar-text">
+                            <span class="badge">PICK UP</span><br>
+                            NFTを無料で入手するための３ステップ（こづかい６,０００円の会社員が解説）
+                        </div>
+                    </a>
+                    <!-- Profile Card in Hero Sidebar -->
+                    <a href="./profile.html" class="hero-sidebar-item"
+                        style="background:linear-gradient(135deg,#1f4037,#99f2c8); color:#fff;">
+                        <img src="./assets/img/cryptninjya01jin.png"
+                            style="width:60px; height:60px; border-radius:50%; flex-shrink:0; border:2px solid #fff;">
+                        <div class="hero-sidebar-text" style="color:#fff;">
+                            <span class="badge" style="background:#fff; color:#1f4037;">PROFILE</span><br>
+                            たくや ｜ 中小企業サラリーマンの学び続ける人生改革
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Main Content Area -->
+                <div class="col-xs-12 col-sm-12 col-md-9 main-content">
+                    <section class="latest-articles">
+                        <h2 class="section-title">📝 全記事一覧</h2>
+
+                        <!-- Category Filter Buttons -->
+                        <div class="category-filter">
+                            <button class="active" onclick="filterCat('all')">すべて</button>
+                            <button onclick="filterCat('NFT・Web3')"
+                                style="border-color:#8e44ad; color:#8e44ad;">NFT・Web3</button>
+                            <button onclick="filterCat('仮想通貨・取引所')"
+                                style="border-color:#f39c12; color:#f39c12;">仮想通貨・取引所</button>
+                            <button onclick="filterCat('ブロックチェーンゲーム')"
+                                style="border-color:#e74c3c; color:#e74c3c;">ブロックチェーンゲーム</button>
+                            <button onclick="filterCat('キャリア・転職')"
+                                style="border-color:#2ecc71; color:#2ecc71;">キャリア・転職</button>
+                            <button onclick="filterCat('自己啓発・学び')"
+                                style="border-color:#3498db; color:#3498db;">自己啓発・学び</button>
+                            <button onclick="filterCat('副業・稼ぎ方')"
+                                style="border-color:#e67e22; color:#e67e22;">副業・稼ぎ方</button>
+                            <button onclick="filterCat('テック・AI')"
+                                style="border-color:#1abc9c; color:#1abc9c;">テック・AI</button>
+                        </div>
+
+                        <div class="articles-grid">
+                            <article class="article-card wrap" style="border: 2px solid #16a085;">
+                                <div class="card-content">
+                                    <p class="meta"><time>2026/03/02</time> <span
+                                            style="background:#e74c3c; color:#fff; padding:2px 8px; border-radius:10px; font-size:0.8em; font-weight:bold;">NEW</span>
+                                    </p>
+                                    <h3 class="title"><a
+                                            href="./articles/datsu-wordpress.html">【完全保存版】脱WordPress！AIを使って年間3万円を節約し爆速ブログを手に入れた全手順を公開</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#1abc9c;">テック・AI</a> <a href="#"
+                                            style="background:#e67e22;">副業・稼ぎ方</a></p>
+                                    <p class="description">
+                                        WordPressの維持費に年間3万円以上払っていませんか？静的HTMLに移行して、サーバー代ゼロ・表示速度10倍・セキュリティ万全のブログを実現した全手順を公開。
+                                    </p>
+                                    <div class="readmore"><a href="./articles/datsu-wordpress.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2024/12/22</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/cnp_token.html">CNPトークン売却を迷っている必見！CNPトークンでの失敗体験談。</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">CNPトークンの売却に迷う方やFiNANCiEの仕組みに興味がある方必見！</p>
+                                    <div class="readmore"><a href="./articles/cnp_token.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2024/12/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/headhunting.html">【体験談】ヘッドハンティングされた理由は「○○第一主義」だった！</a></h3>
+                                    <p class="cat"><a href="#" style="background:#2ecc71;">キャリア・転職</a></p>
+                                    <p class="description">スピードを重視しブルーオーシャンに飛び込むことで得た体験。</p>
+                                    <div class="readmore"><a href="./articles/headhunting.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2024/12/05</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/commute_game.html">【2024年版】通勤中に稼げるスマホゲーム&アプリの最強副業術</a></h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a></p>
+                                    <p class="description">スキマ時間を活用したスマホゲームやアプリでの副収入方法。</p>
+                                    <div class="readmore"><a href="./articles/commute_game.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/12/25</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/financie.html">未知のワールド！FiNANCiEでのゲームコミュニティの魅力とは？</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">FiNANCiEを通じたゲームコミュニティの魅力やトークンを使った応援の形。</p>
+                                    <div class="readmore"><a href="./articles/financie.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/11/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/vlcnp.html">お金がなくても大丈夫！VLCNPで楽しむNFTライフのススメ♪</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">手頃なVLCNPのメリットや無料Discordでの楽しみ方を紹介。</p>
+                                    <div class="readmore"><a href="./articles/vlcnp.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/10/14</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/story-thinking.html">物語思考の力で理想の人生を築く！やりたいことの見つけ方、行動変革の起こし方！</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#3498db;">自己啓発・学び</a></p>
+                                    <p class="description">物語思考からやりたいことを見つけ実行する方法を紹介。</p>
+                                    <div class="readmore"><a href="./articles/story-thinking.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/08/20</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/tiktok-lite.html">知らなきゃ損！データ容量を節約して楽しくお小遣い稼ぎ！TikTok
+                                            Liteの魅力を徹底解説</a></h3>
+                                    <p class="cat"><a href="#" style="background:#e67e22;">副業・稼ぎ方</a></p>
+                                    <p class="description">TikTok Liteでデータ通信料を節約しながらお小遣い稼ぎ。</p>
+                                    <div class="readmore"><a href="./articles/tiktok-lite.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/06/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/nihonichi-zukan.html">No.１ではなくオンリーワンを探そう！-DAOで子供たちの可能性を引き出す日本記録図鑑</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">子供たちの未来を守る日本記録図鑑プロジェクト。</p>
+                                    <div class="readmore"><a href="./articles/nihonichi-zukan.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/03/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/chatgpt.html">未来の記事作成はAI任せ！？chatGPTが作り出す劇的な進化</a></h3>
+                                    <p class="cat"><a href="#" style="background:#1abc9c;">テック・AI</a></p>
+                                    <p class="description">chatGPTの自然言語処理技術の進化と活用事例。</p>
+                                    <div class="readmore"><a href="./articles/chatgpt.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2023/01/20</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/verylonganimals.html">【ベリロン企画】『VGM』TweetでNFTグッズを手に入れた方法公開！</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">ベリロン企画のポテ活でTシャツを手に入れた体験談。</p>
+                                    <div class="readmore"><a href="./articles/verylonganimals.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/11/15</time></p>
+                                    <h3 class="title"><a href="./articles/nouns-dao-baton6.html">宮城県で疾風のバトンパス！Nouns DAO
+                                            JAPANのバトンリレー企画（宮城編）</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Nouns DAO JAPANバトンリレー宮城編。</p>
+                                    <div class="readmore"><a href="./articles/nouns-dao-baton6.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/11/10</time></p>
+                                    <h3 class="title"><a href="./articles/nouns-dao-baton5.html">NFTで日本横断！？Nouns DAO
+                                            JAPANのバトンリレー企画（秋田⇒岩手編）</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Nouns DAO JAPANバトンリレー秋田から岩手編。</p>
+                                    <div class="readmore"><a href="./articles/nouns-dao-baton5.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/11/01</time></p>
+                                    <h3 class="title"><a href="./articles/cnpjtenshoku.html">NFTが転職！？一期一会の超転職とは？</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">CNPの超転職の仕組みと魅力。</p>
+                                    <div class="readmore"><a href="./articles/cnpjtenshoku.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/10/20</time></p>
+                                    <h3 class="title"><a href="./articles/nouns-dao-baton4.html">NFTで日本横断！？Nouns DAO
+                                            JAPANのバトンリレー企画（青森⇒秋田編）</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Nouns DAO JAPANバトンリレー青森から秋田編。</p>
+                                    <div class="readmore"><a href="./articles/nouns-dao-baton4.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/10/15</time></p>
+                                    <h3 class="title"><a href="./articles/nouns-dao-baton3.html">NFTでバトンリレー！？Nouns DAO
+                                            JAPANのおもしろ企画（北海道編Part3）</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Nouns DAO JAPANバトンリレー北海道編Part3。</p>
+                                    <div class="readmore"><a href="./articles/nouns-dao-baton3.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/10/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/nft-goodvalue.html">誰でもできる！NFTをお得に手に入れる方法３選</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFTをお得に入手する3つの方法。</p>
+                                    <div class="readmore"><a href="./articles/nft-goodvalue.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/10/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/x2edao.html">DAO活するならX2Eがおすすめ！NFTで稼ぐよりも面白いことが見つかる。</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">X2E-DAOの魅力とNFTを超えた楽しみ方。</p>
+                                    <div class="readmore"><a href="./articles/x2edao.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/09/20</time></p>
+                                    <h3 class="title"><a href="./articles/nouns-dao-baton2.html">NFTでバトンリレー！？Nouns DAO
+                                            JAPANのおもしろ企画（北海道編Part2）</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Nouns DAO JAPANバトンリレー北海道編Part2。</p>
+                                    <div class="readmore"><a href="./articles/nouns-dao-baton2.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/09/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/nft-june.html">NFTで稼げるって本当？会社員を辞めてNFTに全力投球した結果は。。。</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFTに全力投球した結果のリアルな収支報告。</p>
+                                    <div class="readmore"><a href="./articles/nft-june.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/09/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/anim.html">NFTプロジェクトでミント割れ？！それでも大成功しそうなANIMとは？</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">ミント割れしたANIMプロジェクトの将来性。</p>
+                                    <div class="readmore"><a href="./articles/anim.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/09/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/flowerlolita.html">NFT特典で無料パーティに参加！今後も特典を得られるフラワーロリータのワクワク♪</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">フラワーロリータNFTの特典と無料パーティ参加体験。</p>
+                                    <div class="readmore"><a href="./articles/flowerlolita.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/08/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/pscl.html">見逃すと損！老舗のNFTプロジェクトPartySheepClubの続編プロジェクトが始動。</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Party Sheep Clubの続編プロジェクト情報。</p>
+                                    <div class="readmore"><a href="./articles/pscl.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/08/10</time></p>
+                                    <h3 class="title"><a href="./articles/aopanda.html">Tik
+                                            Tok60万フォロワーの人気キャラクター「あおぱんだ」がNFTに！</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">TikTokで人気のあおぱんだのNFTプロジェクト。</p>
+                                    <div class="readmore"><a href="./articles/aopanda.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/08/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/llac.html">猫好き集まれ〜。にゃんにゃんにゃんのにゃらティブアートLLAC(Live Like A
+                                            Cat)</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">猫がテーマのNFTプロジェクトLLACの紹介。</p>
+                                    <div class="readmore"><a href="./articles/llac.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/07/15</time></p>
+                                    <h3 class="title"><a href="./articles/nouns-dao-baton1.html">NFTでバトンリレー！？Nouns DAO
+                                            JAPANで無料参加できるワクワク企画！</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Nouns DAO JAPANのバトンリレー企画。</p>
+                                    <div class="readmore"><a href="./articles/nouns-dao-baton1.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/07/10</time></p>
+                                    <h3 class="title"><a href="./articles/cnpgiveaway.html">無料でCNPを手に入れるための３ステップ</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">CNPを無料で手に入れる3つのステップ。</p>
+                                    <div class="readmore"><a href="./articles/cnpgiveaway.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/07/01</time></p>
+                                    <h3 class="title"><a href="./articles/first-nft-cnp.html">初心者にすすめ！CNP(CryptoNinja
+                                            Partners)を購入する方法を５ステップで解説</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">CNPの購入方法を5ステップで解説。</p>
+                                    <div class="readmore"><a href="./articles/first-nft-cnp.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/06/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/bitflyer-campaign.html">無料で仮想通貨をゲット！bitFlyerもキャンペーン開始！</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">bitFlyerの仮想通貨キャンペーン情報。</p>
+                                    <div class="readmore"><a href="./articles/bitflyer-campaign.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/06/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/cripto-excited.html">まだ間に合う！仮想通貨でワクワクする３つの魅力</a></h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">仮想通貨の3つの魅力とアーリーアダプターになるメリット。</p>
+                                    <div class="readmore"><a href="./articles/cripto-excited.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/06/01</time></p>
+                                    <h3 class="title"><a href="./articles/eat-to-earn.html">世界初！食べて稼げるEat to
+                                            Earn！日本発祥のNFTプロジェクトPoppinとは</a></h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a></p>
+                                    <p class="description">食べて稼げるEat to EarnプロジェクトPoppin。</p>
+                                    <div class="readmore"><a href="./articles/eat-to-earn.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/05/20</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/axie-origin_play-to-earn.html">初期費用ゼロで無料体験できる。Axie
+                                            Originで遊んで稼ぐPlay to Earn</a></h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a></p>
+                                    <p class="description">Axie Originの無料Play to Earn方法。</p>
+                                    <div class="readmore"><a href="./articles/axie-origin_play-to-earn.html">READ
+                                            MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/05/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/party_sheep_club2.html">ワクワクが止まらないNFTプロジェクトに参加して分かった３つのメリット</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFTプロジェクト参加で得られた3つのメリット。</p>
+                                    <div class="readmore"><a href="./articles/party_sheep_club2.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/05/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/party_sheep_club_wl.html">【体験談】ホワイトリストセールでNFTを手に入れた</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Party Sheep ClubのWLセール体験談。</p>
+                                    <div class="readmore"><a href="./articles/party_sheep_club_wl.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/05/06</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/bcg-pc.html">ブロックチェーンゲーム、メタバースをやるためのハイスペックPCを3万円で購入する方法</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a> <a href="#"
+                                            style="background:#1abc9c;">テック・AI</a></p>
+                                    <p class="description">中古ワークステーションで3万円ハイスペックPCを手に入れる方法。</p>
+                                    <div class="readmore"><a href="./articles/bcg-pc.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/05/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/bitflyer2.html">最短で仮想通貨を手に入れられるbitFlyerの３つの特徴</a></h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">bitFlyerで最短で仮想通貨を手に入れる特徴。</p>
+                                    <div class="readmore"><a href="./articles/bitflyer2.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/04/20</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/bitflyer-credit.html">ワクワクがリスクゼロで手に入る！？ビットコインを入手する方法</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">bitFlyerクレジットカードでリスクゼロでBTC獲得。</p>
+                                    <div class="readmore"><a href="./articles/bitflyer-credit.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/04/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/coincheck_campaign2.html">ビットコインを始めるチャンス！コインチェックキャンペーン中（2022年6月30日まで）</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">コインチェックの期間限定キャンペーン情報。</p>
+                                    <div class="readmore"><a href="./articles/coincheck_campaign2.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/04/10</time></p>
+                                    <h3 class="title"><a href="./articles/party_sheep_club.html">まだ間に合う！NFTプロジェクトParty
+                                            Sheep Clubの特徴</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">Party Sheep Clubの特徴と将来性。</p>
+                                    <div class="readmore"><a href="./articles/party_sheep_club.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/04/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/what-whitelist.html">ホワイトリストっておいしいの？という疑問にシンプル回答！</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFTのホワイトリストとは何かを解説。</p>
+                                    <div class="readmore"><a href="./articles/what-whitelist.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/03/20</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/bitbank.html">仮想通貨取引所のいぶし銀な存在！bitbankのメリット、デメリット</a></h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">bitbankのメリット・デメリットを解説。</p>
+                                    <div class="readmore"><a href="./articles/bitbank.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/03/15</time></p>
+                                    <h3 class="title"><a href="./articles/dracoo-demoplay2.html">今がチャンス！Dracoo
+                                            Masterの始め方</a></h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a></p>
+                                    <p class="description">Dracoo Masterの無料体験方法。</p>
+                                    <div class="readmore"><a href="./articles/dracoo-demoplay2.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/03/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/bitflyer.html">NFTを始めるのに無駄な手数料を払わずETHを手に入れたい！ビットフライヤー３つの特徴</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">bitFlyerの3つの特徴と手数料を抑えたETH購入方法。</p>
+                                    <div class="readmore"><a href="./articles/bitflyer.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/03/01</time></p>
+                                    <h3 class="title"><a href="./articles/dracoo-demoplay.html">先行者利益をゲット！？Dracoo
+                                            Masterをデモプレイする方法</a></h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a></p>
+                                    <p class="description">Dracoo Masterのデモプレイ方法と先行者利益。</p>
+                                    <div class="readmore"><a href="./articles/dracoo-demoplay.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/02/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/nft-experience0.html">知識ゼロ、経験ゼロの私が買ったNFTの価値が半年後○○倍に！！</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFT初心者が購入したNFTの価値が半年で上昇した体験談。</p>
+                                    <div class="readmore"><a href="./articles/nft-experience0.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/02/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/coincheck-experience.html">コインチェックで大失敗！イーサリアムとイーサリアムクラシックの違いを解説。</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">ETHとETCを間違えた失敗体験談と違いの解説。</p>
+                                    <div class="readmore"><a href="./articles/coincheck-experience.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/02/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/coincheck_campaign.html">ビットコインを始めるチャンス！コインチェックキャンペーン中</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">コインチェックのキャンペーン情報。</p>
+                                    <div class="readmore"><a href="./articles/coincheck_campaign.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/01/20</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/crypto_exchange.html">【体験談】もう迷わない！３つの仮想通貨取引所のメリット、デメリット</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">3取引所を体験談ベースで比較。</p>
+                                    <div class="readmore"><a href="./articles/crypto_exchange.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/01/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/crypto_newsletter.html">スキマ時間で大丈夫！無料で仮想通貨を学べるメルマガ３選</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">仮想通貨を学べる無料メルマガ3選。</p>
+                                    <div class="readmore"><a href="./articles/crypto_newsletter.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2022/01/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/crypto_voicy.html">時間が無くても大丈夫！無料で仮想通貨の最新情報をながら聞きで学ぶ方法３選</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#3498db;">自己啓発・学び</a></p>
+                                    <p class="description">Voicyで仮想通貨情報を学べるチャンネル3選。</p>
+                                    <div class="readmore"><a href="./articles/crypto_voicy.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/12/26</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/coincheck.html">仮想通貨、NFTを始めるために必要なコインチェックとは？販売所、取引所の違いも解説</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">コインチェックの特徴3つと販売所・取引所の違い。</p>
+                                    <div class="readmore"><a href="./articles/coincheck.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/12/15</time></p>
+                                    <h3 class="title"><a href="./articles/nft-item.html">NFTグッズの購入、作成して分かったこと</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFTグッズを購入・作成した体験から分かったこと。</p>
+                                    <div class="readmore"><a href="./articles/nft-item.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/12/10</time></p>
+                                    <h3 class="title"><a href="./articles/axie_free.html">本当は教えたくない！無料でアクシーを手に入れた方法</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#e74c3c;">ブロックチェーンゲーム</a></p>
+                                    <p class="description">無料でAxie Infinityのアクシーを手に入れた方法。</p>
+                                    <div class="readmore"><a href="./articles/axie_free.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/12/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/nft-outline.html">５分で分かるNFT３つの特徴（無料で学べるおまけ付き）</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFTの3つの特徴を5分で理解。</p>
+                                    <div class="readmore"><a href="./articles/nft-outline.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/11/15</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/cryptopunks.html">クリプトパンクスの歴史から購入方法までをじっくり解説</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">CryptoPunksの歴史と購入方法。</p>
+                                    <div class="readmore"><a href="./articles/cryptopunks.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/11/10</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/metamask-install.html">【徹底解説】ChromeでのMetaMaskのインストール方法</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#f39c12;">仮想通貨・取引所</a></p>
+                                    <p class="description">ChromeへのMetaMaskインストール手順。</p>
+                                    <div class="readmore"><a href="./articles/metamask-install.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/11/05</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/ikehaya-mail-magazine.html">【無料イケハヤメルマガ】ゼロからネットで稼げる方法を学んだ結果</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#3498db;">自己啓発・学び</a></p>
+                                    <p class="description">イケハヤ無料メルマガでネットビジネスを学んだ結果。</p>
+                                    <div class="readmore"><a href="./articles/ikehaya-mail-magazine.html">READ MORE</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/11/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/nft-sell.html">超簡単！１分で出来るNFTの販売、販売のキャンセル方法解説</a></h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">OpenSeaでのNFT販売とキャンセル方法。</p>
+                                    <div class="readmore"><a href="./articles/nft-sell.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/10/25</time></p>
+                                    <h3 class="title"><a href="./articles/nft-giveaway.html">NFTを無料で入手するための３ステップ</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#8e44ad;">NFT・Web3</a></p>
+                                    <p class="description">NFT Giveawayに参加してNFTを入手する3ステップ。</p>
+                                    <div class="readmore"><a href="./articles/nft-giveaway.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/10/06</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/blog-how-to.html">WordPress記事をTwitterにリンクする時の画像設定</a></h3>
+                                    <p class="cat"><a href="#" style="background:#1abc9c;">テック・AI</a></p>
+                                    <p class="description">All in One SEOを使ったTwitter画像設定方法。</p>
+                                    <div class="readmore"><a href="./articles/blog-how-to.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/10/05</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/ikehaya-shihon.html">ながら聞きで人生を変える方法（イケハヤさん流資本主義の攻略法）</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#3498db;">自己啓発・学び</a></p>
+                                    <p class="description">イケハヤさんのVoicy放送「資本主義の攻略法」全7回まとめ。</p>
+                                    <div class="readmore"><a href="./articles/ikehaya-shihon.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/10/03</time></p>
+                                    <h3 class="title"><a href="./articles/shuuheiqa01.html">時短用 稼ぎたいけど稼げない時の悩み回答まとめ</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#e67e22;">副業・稼ぎ方</a></p>
+                                    <p class="description">しゅうへいさんへのVoicy質問回答まとめ。</p>
+                                    <div class="readmore"><a href="./articles/shuuheiqa01.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/10/02</time></p>
+                                    <h3 class="title"><a href="./articles/salary-up.html">給料の上がらない会社員が給料泥棒から学ぶこと</a>
+                                    </h3>
+                                    <p class="cat"><a href="#" style="background:#2ecc71;">キャリア・転職</a></p>
+                                    <p class="description">給料泥棒から学ぶ給料を上げるマインドセット。</p>
+                                    <div class="readmore"><a href="./articles/salary-up.html">READ MORE</a></div>
+                                </div>
+                            </article>
+
+                            <article class="article-card wrap">
+                                <div class="card-content">
+                                    <p class="meta"><time>2021/10/01</time></p>
+                                    <h3 class="title"><a
+                                            href="./articles/job-change.html">２０代から３０代で自分を大事して年収が上がった転職経験</a></h3>
+                                    <p class="cat"><a href="#" style="background:#2ecc71;">キャリア・転職</a></p>
+                                    <p class="description">3社の転職経験から年収を上げた体験談。</p>
+                                    <div class="readmore"><a href="./articles/job-change.html">READ MORE</a></div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside id="sidebar" class="col-xs-12 col-sm-12 col-md-3">
+                    <div class="col-xs-12 author">
+                        <img src="./assets/img/cryptninjya01jin.png" class="img-responsive img-circle"
+                            style="max-width:100px; border-radius:50%; display:block; margin:0 auto 15px;">
+                        <h4 style="text-align:center;"><span>たくや</span></h4>
+                        <hr>
+                        <p>中小企業サラリーマン。サラリーマンの給料を超えるために、セルフバック、アフェリエイト、クライアントワークス実施中。目標は子供に「行ってらっしゃい」「おかえりなさい」を言えるライフスタイルを獲得すること。
+                        </p>
+                        <div style="text-align:center; margin-top:15px;">
+                            <a href="./profile.html"
+                                style="display:inline-block; padding:8px 20px; background:#16a085; color:#fff; border-radius:20px; text-decoration:none; font-weight:bold;">プロフィール詳細</a>
+                        </div>
+                    </div>
+
+                    <!-- Category Summary -->
+                    <div
+                        style="margin-top:25px; background:#fff; padding:20px; border-radius:12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                        <h4 style="text-align:center; color:#2c3e50; margin-bottom:15px;"><span>📂 カテゴリー</span></h4>
+                        <hr>
+                        <ul style="list-style:none; padding:0;">
+                            <li style="padding:8px 0; border-bottom:1px solid #eee;"><a href="#"
+                                    onclick="filterCat('NFT・Web3')"
+                                    style="text-decoration:none; color:#8e44ad; font-weight:bold;">🎨 NFT・Web3</a></li>
+                            <li style="padding:8px 0; border-bottom:1px solid #eee;"><a href="#"
+                                    onclick="filterCat('仮想通貨・取引所')"
+                                    style="text-decoration:none; color:#f39c12; font-weight:bold;">💰 仮想通貨・取引所</a></li>
+                            <li style="padding:8px 0; border-bottom:1px solid #eee;"><a href="#"
+                                    onclick="filterCat('ブロックチェーンゲーム')"
+                                    style="text-decoration:none; color:#e74c3c; font-weight:bold;">🎮 ブロックチェーンゲーム</a>
+                            </li>
+                            <li style="padding:8px 0; border-bottom:1px solid #eee;"><a href="#"
+                                    onclick="filterCat('キャリア・転職')"
+                                    style="text-decoration:none; color:#2ecc71; font-weight:bold;">💼 キャリア・転職</a></li>
+                            <li style="padding:8px 0; border-bottom:1px solid #eee;"><a href="#"
+                                    onclick="filterCat('自己啓発・学び')"
+                                    style="text-decoration:none; color:#3498db; font-weight:bold;">📚 自己啓発・学び</a></li>
+                            <li style="padding:8px 0; border-bottom:1px solid #eee;"><a href="#"
+                                    onclick="filterCat('副業・稼ぎ方')"
+                                    style="text-decoration:none; color:#e67e22; font-weight:bold;">🚀 副業・稼ぎ方</a></li>
+                            <li style="padding:8px 0;"><a href="#" onclick="filterCat('テック・AI')"
+                                    style="text-decoration:none; color:#1abc9c; font-weight:bold;">💻 テック・AI</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container-fluid credit" style="padding: 20px 0;">
+            <div class="row">
+                <p class="col-xs-12 text-center" style="color:#fff; text-align:center;">Copyright - jinseimanabi.com All
+                    Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterCat(cat) {
+            const cards = document.querySelectorAll('.article-card');
+            const buttons = document.querySelectorAll('.category-filter button');
+            buttons.forEach(b => {
+                b.classList.remove('active');
+                if (cat === 'all' && b.textContent === 'すべて') b.classList.add('active');
+                else if (b.textContent.includes(cat)) b.classList.add('active');
+            });
+            cards.forEach(card => {
+                if (cat === 'all') {
+                    card.style.display = '';
+                } else {
+                    const catLinks = card.querySelectorAll('.cat a');
+                    const match = [...catLinks].some(a => a.textContent === cat);
+                    card.style.display = match ? '' : 'none';
+                }
+            });
+            // Scroll to articles
+            document.querySelector('.latest-articles').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
