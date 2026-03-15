@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>【実録】エックスサーバーからGitHub Pagesへ！サクッと独自ドメインを移行して年間維持費を0円にした完全手順 - 学び続けて人生改革</title>
+    <meta name="description"
+        content="脱WordPressシリーズ第2弾！エックスサーバーで管理していた独自ドメインを、無料で使えるGitHub Pagesの爆速サーバーに接続し直す手順を画像付きで分かりやすく解説します。" />
+    <meta name="keywords"
+        content="WordPress,脱WordPress,静的サイト,GitHub Pages,エックスサーバー,Xserver,独自ドメイン,ドメイン移行,DNS設定,維持費削減" />
+    <meta property="og:title" content="【実録】エックスサーバーからGitHub Pagesへ！サクッと独自ドメインを移行して年間維持費を0円にした完全手順" />
+    <meta property="og:description" content="脱WordPressシリーズ第2弾！エックスサーバーの独自ドメインを無料で使えるGitHub Pagesに接続する全手順を解説します。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jinseimanabi.com/articles/custom-domain-migration.html" />
+    <meta property="og:image" content="https://jinseimanabi.com/assets/img/custom-domain-eyecatch.png" />
+    <meta property="article:published_time" content="2026-03-03" />
+    <meta property="article:author" content="たくや" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://jinseimanabi.com/articles/custom-domain-migration.html" />
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+    <style type="text/css">
+        header .nav-bg {
+            background: rgb(103, 173, 181);
+        }
+
+        header .nav-bg .nav.navbar-nav a {
+            color: #fff;
+        }
+
+        header .nav-bg .nav.navbar-nav a:hover {
+            background: rgb(137, 176, 181);
+        }
+
+        span.sitename.sub {
+            color: rgb(5, 133, 150);
+        }
+
+        .single h2 {
+            border-left: 9px solid rgb(102, 171, 182);
+            padding-left: 15px;
+            margin: 50px 0 20px;
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+
+        .single h3 {
+            border-left: 9px solid rgb(102, 171, 182);
+            padding-left: 12px;
+            margin: 30px 0 15px;
+            font-size: 1.25em;
+            color: #34495e;
+        }
+
+        hr {
+            border: 1px solid rgb(102, 171, 182);
+        }
+
+        footer .credit {
+            background: rgb(103, 173, 181);
+        }
+
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2.0;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+        }
+
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .article-meta {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .article-meta .date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .article-meta h1 {
+            font-size: 1.6em;
+            color: #2c3e50;
+            margin: 15px 0;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e8f8f5);
+            border-left: 5px solid #16a085;
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: #16a085;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        code {
+            background: #f1f2f6;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #e84118;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .ip-list {
+            background: #2d3436;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+        }
+
+        .ip-list li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+    </style>
+    <link rel="icon" href="../assets/img/cryptninjya01jin.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-sm-12 blogname">
+                    <h1 class="title"><a href="../index.html" class="sitename"><span
+                                class="sitename main">学び続けて人生改革</span></a><span class="sitename sub">Life is
+                            learn</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid nav-bg">
+            <div class="container">
+                <div class="row">
+                    <nav>
+                        <ul class="nav navbar-nav">
+                            <li class="sp-none"><a href="../index.html">ホーム</a></li>
+                            <li><a href="../profile.html">プロフィール</a></li>
+                            <li><a href="../index.html">NFT・Web3</a></li>
+                            <li><a href="../index.html">仮想通貨</a></li>
+                            <li><a href="../index.html">BCG</a></li>
+                            <li><a href="../index.html">キャリア</a></li>
+                            <li><a href="../index.html">学び</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="col-xs-12 wrap single">
+            <div class="article-meta">
+                <p class="date">📅 2026年3月3日 ／ 最終更新：2026年3月3日</p>
+                <h1>【実録】エックスサーバーからGitHub Pagesへ！<br>サクッと独自ドメインを移行して年間維持費を0円にした完全手順</h1>
+            </div>
+
+            <div class="article-body">
+                <p>前回の記事「<a href="datsu-wordpress.html">脱WordPress！AIを使って年間3万円を節約し爆速ブログを手に入れた全手順を公開</a>」の続編です！</p>
+
+                <p>無事にWordPressから静的HTMLファイルへの移行（GitHubへのアップロード）が終わったら、<strong>最後の大仕事「ドメイン（URL）のお引越し」</strong>が待っています。
+                </p>
+
+                <p>今回は、私が実際に<strong>エックスサーバー（Xserver）で管理していた独自ドメイン（jinseimanabi.com）を、無料で使えるGitHub
+                        Pagesに接続し直した手順</strong>を、分かりやすく解説します。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 この作業をやるとどうなる？</strong>
+                    <ul>
+                        <li>これまでエックスサーバーに毎月払っていた<strong>レンタルサーバー代が不要</strong>になります（かかるのは年間2,000円ほどのドメイン更新料だけ！）</li>
+                        <li>「github.io」のような長いURLではなく、<strong>自分だけの「〜.com」のURLでブログを運営</strong>し続けられます</li>
+                        <li>超高速なGitHubのサーバー経由でサイトが表示されるようになります</li>
+                    </ul>
+                </div>
+
+                <h2>全体の流れ（所要時間：作業15分＋待ち時間）</h2>
+
+                <p>ドメインの移行は、実はたった2つのステップで終わります。</p>
+
+                <ol>
+                    <li><strong>エックスサーバー側の設定</strong>：「これからはGitHubのサーバーを表示してね」と住所変更（DNSレコード変更）をする</li>
+                    <li><strong>GitHub側の設定</strong>：「このドメインはうちのサイトで使いますよ」と登録する</li>
+                </ol>
+
+                <p>それでは、具体的な手順を見ていきましょう！</p>
+
+                <h2>STEP1：エックスサーバーのDNSレコードを変更する</h2>
+
+                <p>まずは、ドメインを管理しているエックスサーバーの「サーバーパネル」にログインします。</p>
+
+                <h3>1. DNSレコード設定画面を開く</h3>
+                <p>サーバーパネルの左側メニュー（下の方）にある「ドメイン」の中の<strong>「DNSレコード設定」</strong>をクリックし、設定したいドメイン（例：jinseimanabi.com）を選択します。
+                </p>
+
+                <div class="warning-box">
+                    <strong>⚠️ 注意！既存の不要な設定を削除する</strong><br>
+                    <p style="margin-top:10px;">
+                        「DNSレコード一覧」のタブを開くと、現在エックスサーバーを向いている設定が並んでいます。ここでエラーを防ぐために、<strong>種別が「A」で、ホスト名に「www」や「*」が付いている行</strong>があれば、右端のゴミ箱マークで削除しておきます。（一番上の空欄のAレコードは後で編集するので残してOKです）
+                    </p>
+                </div>
+
+                <h3>2. GitHubの住所（IPアドレス）を登録する（Aレコード）</h3>
+                <p>次に、GitHub
+                    Pagesのサーバーの住所となる「IPアドレス（Aレコード）」を4つ登録します。元々あるAレコードは「編集」をして書き換え、残りは「DNSレコード設定を追加」タブから3回に分けて追加します。</p>
+
+                <p>追加する内容は以下の通りです。</p>
+                <ul>
+                    <li><strong>ホスト名</strong>：空欄（または初期設定のドメイン名のまま）</li>
+                    <li><strong>種別</strong>：<code>A</code></li>
+                    <li><strong>内容</strong>：以下の4つの数字をそれぞれ1つずつ追加します</li>
+                </ul>
+
+                <ul class="ip-list">
+                    <li>185.199.108.153</li>
+                    <li>185.199.109.153</li>
+                    <li>185.199.110.153</li>
+                    <li>185.199.111.153</li>
+                </ul>
+
+                <h3>3. CNAMEレコードを追加する</h3>
+                <p>続けて、「www」がついたURLでもアクセスできるように設定を追加します。</p>
+                <ul>
+                    <li><strong>ホスト名</strong>：<code>www</code></li>
+                    <li><strong>種別</strong>：<code>CNAME</code></li>
+                    <li><strong>内容</strong>：<code>自分のGitHubユーザーネーム.github.io</code>（例：foodsafety-partners.github.io）
+                    </li>
+                </ul>
+
+                <p>設定が終わると、一覧画面には「Aレコードが4つ」「CNAMEレコードが1つ」並んでいる状態になります。これでエックスサーバー側の作業は完了です！</p>
+
+                <h2>STEP2：GitHub Pagesでドメインを登録する</h2>
+
+                <p>エックスサーバー側の設定が終わったら、次はGitHub側の設定です。<br>
+                    ※ただし、先ほどのエックスサーバーの設定が世界中のインターネットに反映されるまで（DNSの浸透）、数十分から数時間かかることがあります。</p>
+
+                <h3>1. Custom domainの設定</h3>
+                <p>自分のGitHubリポジトリ（静的ファイルをアップロードした場所）を開き、上部の<strong>「Settings（歯車マーク）」</strong>をクリックします。<br>
+                    左メニューの<strong>「Pages」</strong>を開き、少し下にスクロールすると<strong>「Custom domain」</strong>という項目があります。</p>
+
+                <p>ここの入力欄に、自分の独自ドメイン（例：<code>jinseimanabi.com</code>）を入力し、「Save」ボタンを押します。</p>
+                <p>※末尾にスラッシュ「/」を入れたり、「https://」をつけるとエラーになるので、純粋に「〇〇.com」の部分だけを入力します。</p>
+
+                <div class="info-box">
+                    <strong>「プライバシーが保護されません」と警告が出たら？</strong><br>
+                    <p style="margin-top:10px;">
+                        Save後、さっそく自分のURLにアクセスしてみると「保護されていない通信」「プライバシーが保護されません」という真っ赤な警告画面が出ることがあります。<br>
+                        <strong>大丈夫です！これは設定が成功している証拠です。</strong>
+                    </p>
+                    <p>住所（DNS）が切り替わった直後は、GitHub側で「安全証明書（SSL証明書）」を発行する作業が行われており、これに小一時間かかります。証明書がないためブラウザが警告を出しているだけなので、ただ待つだけでOKです。
+                    </p>
+                </div>
+
+                <h3>2. HTTPS通信を強制する（Enforce HTTPS）</h3>
+                <p>1時間ほど待つと、GitHub側で自動的にSSL証明書の発行が完了します。</p>
+                <p>同じく「Settings > Pages」のCustom domainのすぐ下にある<strong>「Enforce
+                        HTTPS」</strong>というチェックボックスが、（最初はグレーアウトして押せなかったものが）押せるようになります。</p>
+
+                <p>ここにチェックを入れれば、すべての作業は完了！<br>
+                    あなたのブログは鍵マーク（🔒）のついた安全な <code>https://独自ドメイン</code> として、高速なGitHubサーバーから配信されるようになります！</p>
+
+                <h2>まとめ：サーバー代0円はやっぱり最高の気分！</h2>
+
+                <p>この手順を踏むことで、WordPress時代に毎月払っていたレンタルサーバーの月額料金パックから卒業し、「ドメインの維持費のみ（年額2,000円程度）」という超絶コスパの良いブログ運営環境が完成しました。
+                </p>
+
+                <p>最初は「DNSレコード？」「CNAME？」と謎の横文字に戸惑うかもしれませんが、やること自体は「決められた数字や文字をコピペして追加するだけ」です。<br>
+                    脱WordPressを目指す方は、ぜひこの記事を参考に最後のドメイン設定にチャレンジしてみてください！</p>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid credit">
+            <div class="container text-center">
+                <p>&copy; 2026 学び続けて人生改革 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
